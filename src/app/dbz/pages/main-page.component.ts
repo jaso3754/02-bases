@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Character } from '../interfaces/character.interface';
 
 @Component({
@@ -7,8 +7,6 @@ import { Character } from '../interfaces/character.interface';
 })
 
 export class MainPageComponent {
-  @output()
-  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   public characters: Character[] = [{
     name: 'Krilin',
@@ -22,11 +20,8 @@ export class MainPageComponent {
     power: 7500
   }];
 
-    onNewCharacter( charater:string):void {
-      console.log('Mainpage');
-      console.log(Character);
-
-
+    onNewCharacter( character: Character ):void {
+      this.characters.push(character);
     }
 
 }
