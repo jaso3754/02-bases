@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-heroes-list',
@@ -9,6 +9,7 @@ export class ListComponent {
  public heroesNames: string[] = ['Spider','ironman',
   'Hulk', 'she hulk', 'Thor'];
   public deletedHero?: string;
+
 
   removeLastHero():void {
     this.deletedHero = this.heroesNames.pop();
